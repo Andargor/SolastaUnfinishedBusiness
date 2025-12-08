@@ -89,10 +89,12 @@ internal static class CampaignsDisplay
         if (UI.Toggle(Gui.Localize("ModUi/&EnemySpellcastersDropScribedSpellbooks"), ref toggle, UI.AutoWidth()))
         {
             Main.Settings.EnemySpellcastersDropScribedSpellbooks = toggle;
+            /*
             if (toggle)
             {
                 SpellbookContext.Load();
             }
+            */
         }
 
         UI.Label();
