@@ -179,6 +179,7 @@ public class Settings : UnityModManager.ModSettings
     public int OverridePartySize { get; set; } = ToolsContext.GamePartySize;
     public bool AllowAllPlayersOnNarrativeSequences { get; set; }
     public bool AddPickPocketableLoot { get; set; }
+    public bool EnemySpellcastersDropScribedSpellbooks { get; set; }
     public bool AltOnlyHighlightItemsInPartyFieldOfView { get; set; }
     [Tag(Type = TagType.QoL)] public bool EnableAdditionalIconsOnLevelMap { get; set; }
     public bool HideExitsAndTeleportersGizmosIfNotDiscovered { get; set; }
@@ -293,6 +294,7 @@ public class Settings : UnityModManager.ModSettings
     public bool ShowCraftingRecipeInDetailedTooltips { get; set; }
     public bool ShowCraftedItemOnRecipeIcon { get; set; }
     public bool SwapCraftedItemAndRecipeIcons { get; set; }
+    public bool LearnAllScrollRecipes { get; set; }
     public int RecipeCost { get; set; } = 200;
     public int TotalCraftingTimeModifier { get; set; }
     public bool AddNewWeaponsAndRecipesToShops { get; set; }
@@ -329,7 +331,7 @@ public class Settings : UnityModManager.ModSettings
     public int OpenAITopK { get; set; } = OpenAITranslationService.DefaultTopK;
 
     public string OpenAISystemPrompt { get; set; } =
-        OpenAITranslationService.DefaultSystemPrompt;
+        OpenAITranslationService.FallbackSystemPrompt;
 
     /// <summary>
     ///     Number of concurrent translation tasks (1-10).
