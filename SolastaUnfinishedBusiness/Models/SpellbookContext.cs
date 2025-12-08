@@ -133,5 +133,4 @@ internal static class SpellbookContext
             }
         }
     }
-
 }
