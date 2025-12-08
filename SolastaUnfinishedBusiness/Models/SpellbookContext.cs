@@ -1,39 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SolastaUnfinishedBusiness.Api;
-using SolastaUnfinishedBusiness.Api.LanguageExtensions;
-using SolastaUnfinishedBusiness.Builders;
-using SolastaUnfinishedBusiness.CustomUI;
-using SolastaUnfinishedBusiness.Patches;
-using SolastaUnfinishedBusiness.Subclasses;
-using TinyJson;
-using UnityEngine;
-using UniverseLib.UI.Widgets.ScrollView;
 using static SolastaUnfinishedBusiness.Api.DatabaseHelper;
-using static UnityEngine.UI.Image;
-using Resources = SolastaUnfinishedBusiness.Properties.Resources;
 
 namespace SolastaUnfinishedBusiness.Models;
 internal static class SpellbookContext
 {
-    private static bool _initialized;
     private static Dictionary<string, SpellDefinition> wizardSubspellParent = new Dictionary<string, SpellDefinition>();
     private static Dictionary<string, List<SpellDefinition>> monsterSpellCache = new Dictionary<string, List<SpellDefinition>>();
 
     private static ItemDefinition _spellbookDefinition = DatabaseHelper.GetDefinition<ItemDefinition>("Spellbook");
-
-    internal static void Load()
-    {
-        if (_initialized)
-        {
-            return;
-        }
-
-        _initialized = true;
-    }
 
     private static void initializeWizardSubspellParents()
     {
