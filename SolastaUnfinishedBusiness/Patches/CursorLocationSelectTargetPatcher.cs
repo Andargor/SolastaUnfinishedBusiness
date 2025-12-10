@@ -570,6 +570,21 @@ public static class CursorLocationSelectTargetPatcher
         {
             __instance.affectedCharacterColor =
                 CampaignsContext.HighContrastColors[Main.Settings.HighContrastTargetingSingleSelectedColor];
+
+
+            bool altPressed = Input.GetKey(KeyCode.RightAlt) || Input.GetKey(KeyCode.LeftAlt);
+
+            Main.Info($"RefreshHover_Patch alt {altPressed} highlight {__instance.isDisplayingGadgetInteractionHighlight} ************");
+            /*
+            if (!__instance.losHelper.isActiveAndEnabled)
+            {
+                Main.Info($"RefreshHover_Patch activate");
+                __instance.losHelper = Object.Instantiate<GameObject>(__instance.losHelperPrefab, __instance.transform).GetComponent<LineOfSightHelper>();
+                __instance.losHelper.gameObject.SetActive(true);
+                __instance.losHelper.Initalize();
+            }
+            */
+
         }
     }
 }
